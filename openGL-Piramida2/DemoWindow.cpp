@@ -29,6 +29,53 @@ void DemoWindow::setup_gl()
 	glMatrixMode(GL_MODELVIEW);
 }
 
+void funcKUB () {  // функция
+	glBegin(GL_QUADS);
+
+		glNormal3d(  0.,  0.,  -1.);
+		glColor3d(1.0, 0.0, 0.0);		// Нижняя грань, красная
+		glVertex3d(  1.,  1., -1.);
+		glVertex3d( -1.,  1., -1.);
+		glVertex3d( -1., -1., -1.);
+		glVertex3d(  1., -1., -1.);
+
+		glNormal3d(  0.,  0., 1.);
+		glColor3d(0.0, 1.0, 1.0);		// Верхняя грань, бирюзовая
+		glVertex3d( -1.,  1.,  1.);
+		glVertex3d(  1.,  1.,  1.);
+		glVertex3d(  1., -1.,  1.);
+		glVertex3d( -1., -1.,  1.);
+
+		glNormal3d(  1.,  0.,  0.);
+		glColor3d(0.0, 1.0, 0.0);		// Боковая грань1, синяя
+			glVertex3d(1.0, -1.0,  1.0);
+			glVertex3d( 1.0, 1.0,  1.0);
+			glVertex3d( 1.0,  1.0,  -1.0);
+			glVertex3d(1.0,  -1.0,  -1.0);
+
+			glNormal3d( -1.,  0.,  0.);
+			glColor3d(1.0, 0.0, 1.0);		// Боковая грань2, розовая
+					glVertex3d(-1.0, 1.0,  1.0);
+					glVertex3d( -1.0, -1.0,  1.0);
+					glVertex3d( -1.0,  -1.0,  -1.0);
+					glVertex3d(-1.0,  1.0,  -1.0);
+
+					glNormal3d(  0.,  1.,  0.);
+			glColor3d(1.0, 1.0, 1.0);		// Боковая грань3, белая
+					glVertex3d(-1.0, 1.0,  1.0);
+					glVertex3d( 1.0, 1.0,  1.0);
+					glVertex3d( 1.0,  1.0,  -1.0);
+					glVertex3d(-1.0,  1.0,  -1.0);
+
+					glNormal3d(  0., -1.,  0.);
+					glColor3d(0.0, 0.0, 0.0);		// Боковая грань4, черная
+							glVertex3d(1.0, -1.0,  1.0);
+							glVertex3d( -1.0, -1.0,  1.0);
+							glVertex3d( -1.0,  -1.0,  -1.0);
+							glVertex3d(1.0,  -1.0,  -1.0);
+							glEnd();
+}
+
 void DemoWindow::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Очистка
@@ -41,49 +88,7 @@ void DemoWindow::render()
 
 	glRotated(_cube_angle, 0.0, 0.0, 1.0);
 
-	glBegin(GL_QUADS);
 
-	glNormal3d(  0.,  0.,  -1.);
-	glColor3d(1.0, 0.0, 0.0);		// Нижняя грань, красная
-	glVertex3d(  1.,  1., -1.);
-	glVertex3d( -1.,  1., -1.);
-	glVertex3d( -1., -1., -1.);
-	glVertex3d(  1., -1., -1.);
-
-	glNormal3d(  0.,  0., 1.);
-	glColor3d(0.0, 1.0, 1.0);		// Верхняя грань, бирюзовая
-	glVertex3d( -1.,  1.,  1.);
-	glVertex3d(  1.,  1.,  1.);
-	glVertex3d(  1., -1.,  1.);
-	glVertex3d( -1., -1.,  1.);
-
-	glNormal3d(  1.,  0.,  0.);
-	glColor3d(0.0, 0.0, 1.0);		// Боковая грань1, синяя
-		glVertex3d(1.0, -1.0,  1.0);
-		glVertex3d( 1.0, 1.0,  1.0);
-		glVertex3d( 1.0,  1.0,  -1.0);
-		glVertex3d(1.0,  -1.0,  -1.0);
-
-		glNormal3d( -1.,  0.,  0.);
-		glColor3d(1.0, 0.0, 1.0);		// Боковая грань2, розовая
-				glVertex3d(-1.0, 1.0,  1.0);
-				glVertex3d( -1.0, -1.0,  1.0);
-				glVertex3d( -1.0,  -1.0,  -1.0);
-				glVertex3d(-1.0,  1.0,  -1.0);
-
-				glNormal3d(  0.,  1.,  0.);
-		glColor3d(1.0, 1.0, 1.0);		// Боковая грань3, белая
-				glVertex3d(-1.0, 1.0,  1.0);
-				glVertex3d( 1.0, 1.0,  1.0);
-				glVertex3d( 1.0,  1.0,  -1.0);
-				glVertex3d(-1.0,  1.0,  -1.0);
-
-				glNormal3d(  0., -1.,  0.);
-				glColor3d(0.0, 0.0, 0.0);		// Боковая грань4, черная
-						glVertex3d(1.0, -1.0,  1.0);
-						glVertex3d( -1.0, -1.0,  1.0);
-						glVertex3d( -1.0,  -1.0,  -1.0);
-						glVertex3d(1.0,  -1.0,  -1.0);
 
 
 
